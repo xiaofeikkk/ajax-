@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0">
+		<title>购物车</title>
+		<link rel="stylesheet" type="text/css" href="./css/cart.css"/>
+		<link rel="stylesheet" href="./lib/iconfont/iconfont.css">
+	</head>
+	<body>
+		<div class="body">
+			<div class="shop"><i class="iconfont icon-fanhui"></i><span>我的购物车</span></div>
+			<div class="product">
+				
+			</div>
+			<div class="product-js">
+				<div class="product-al">
+					<div class="product-all">
+						<em class=""></em>
+					</div>
+					<div class="all-xz"><span class="product-all-qx">全选</span><div class="all-sl" style="display: none;">(<span class="product-all-sl">0</span>)</div></div>
+				</div>
+				<a href="order.html" class="product-sett product-sett-a">结算</a>
+				<div class="all-product"><span class="all-product-a">¥&thinsp;<span class="all-price">296</span></span></div>
+				
+			</div>
+		</div>
+		<!--购物车空-->
+		<div class="kon-cat">
+			<div class="catkon">
+				<div class="kon-box">
+					<div class="kon-hz">
+						<img src="img/cart-air.png" />
+						<span class="kon-wz">购物车什么都没有</span>
+						<a href="###" class="kon-lj">去逛逛</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script type="text/html" id="tpl-carGood">
+		{{each data}}
+		<div class="product-box">
+			<div class="product-ckb">
+				<em class="product-em product-xz"></em>
+			</div>
+			<div class="product-sx">
+				<a href="###">
+					<img src="http://www.shop.com{{$value.fileurl}}" class="product-img" />
+					<span class="product-name">{{$value.name}}</span>
+				</a>
+				<span class="product-price">¥&thinsp;<span class="price">{{$value.price*$value.num}}</span></span>
+				<div class="product-amount">
+					<div class="product_gw" data-num="{{$value.num}}">
+					   <em class="product-jian">-</em>
+					   <input type="text" value="{{$value.num}}" class="product-num"/>
+					   <em class="product-add">+</em>
+					</div>
+				</div>
+				<div class="product-del" data-id="{{$value.id}}">
+					<span class="iconfont icon-shanchu"></span>
+				</div>
+			</div>
+		</div>
+		{{/each}}
+	</script>
+
+	<script src="./lib/jquery.min.js"></script>
+	<script src="./lib/template-web.js"></script>
+	<script src="./js/cart.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/configure.js"></script>
+	<script src="js/car.js"></script>
+</html>
